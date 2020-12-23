@@ -2,7 +2,7 @@ export function GetAgeGroupName(dataKey)
 {
     switch(dataKey){
         case "underSixteen":
-            return "<16"
+            return "Under 16"
         case "sixteenToTwenty":
             return "16-20"
         case "twentOneToTwentyFive":
@@ -17,6 +17,8 @@ export function GetAgeGroupName(dataKey)
             return "36-37"
         case "thirtySixToThirtyNine":
             return "37-39"
+        case "aboveThirty":
+            return "Over 30"
         default:
             return "Unknown"
     };

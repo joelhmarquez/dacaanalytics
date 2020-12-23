@@ -7,6 +7,8 @@ const bySexKeyName = "bySex"
 
 export function GetAgeGroupByYearData()
 {
+    let aboveThirtyKeyName = "aboveThirty"
+    let aboveThirtyCategories = ["thirtyOneToThirtyFive", "thirtyOneToThirtySix", "thirtySixToThirtySeven", "thirtySixToThirtyNine"]
     let data = [];
     for (var year of Object.keys(rawData.year))
     {
@@ -15,6 +17,19 @@ export function GetAgeGroupByYearData()
         {
             let val = rawData.year[year][populationKeyName][byAgeGroupKeyName];
             val["year"] = year;
+
+            for (var category of aboveThirtyCategories){
+                if (category in val){
+                    if (!(aboveThirtyKeyName in val)){
+                        val[aboveThirtyKeyName] = val[category]
+                    }
+                    else{
+                        val[aboveThirtyKeyName] += val[category]
+                    }
+                }
+                delete val[category]
+            }
+
             data.push(val)
         }
     }
@@ -49,6 +64,7 @@ export function GetSexByYearData()
         {
             let val = rawData.year[year][populationKeyName][bySexKeyName];
             val["year"] = year;
+
             data.push(val)
         }
     }

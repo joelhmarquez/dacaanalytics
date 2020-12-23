@@ -10,9 +10,9 @@ function App() {
       <Nav />
       <div className="content-wrapper">
         <div className="container-fluid">
+          <AgeGroupGraphElem/>
           <SexGraphElem/>
           <MaritalStatusGraphElem/>
-          <AgeGroupGraphElem/>
         </div>
       </div>
     <Footer />
