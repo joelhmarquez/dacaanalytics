@@ -1,14 +1,19 @@
 import Footer from './components/common/Footer'
-import Nav from './components/common/Nav'
+import Navigation from './components/common/Navigation'
+import Performance from './components/population/Population'
 import Population from './components/population/Population'
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from './components/common/Routes'
 
 function App() {
   return (
     <div>
-      <Nav />
+      <Navigation />
       <div className="content-wrapper">
         <div className="container-fluid">
-          <Population/>
+        <Router>
+          <Routes/>
+        </Router>
         </div>
       </div>
     <Footer />

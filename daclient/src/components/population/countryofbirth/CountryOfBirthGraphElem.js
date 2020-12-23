@@ -12,7 +12,7 @@ function GetGraphs()
 function CountryOfBirthGraphElem()
 {
     return (
-       <ChartElem title="Population by Country of Birth" type="area-chart" graphs={GetGraphs()}/>
+       <ChartElem title="DACA Beneficiaries by Country of Birth" type="area-chart" graphs={GetGraphs()}/>
     );
 }
 

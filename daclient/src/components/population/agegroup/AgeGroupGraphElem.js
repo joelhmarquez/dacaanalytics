@@ -18,7 +18,7 @@ function GetGraphs()
 function AgeGroupGraphElem()
 {
     return (
-       <ChartElem title="Population by Age Group" type="area-chart" graphs={GetGraphs()}/>
+       <ChartElem title="DACA Beneficiaries by Age Group" type="area-chart" graphs={GetGraphs()}/>
     );
 }
 

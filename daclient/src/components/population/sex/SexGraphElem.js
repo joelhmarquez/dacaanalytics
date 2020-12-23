@@ -18,7 +18,7 @@ function GetGraphs()
 function SexGraphElem()
 {
     return (
-       <ChartElem title="Population by Sex" type="area-chart" graphs={GetGraphs()}/>
+       <ChartElem title="DACA Beneficiaries by Sex" type="area-chart" graphs={GetGraphs()}/>
     );
 }
 

@@ -4,7 +4,7 @@ import MaritalStatusGraphElem from './maritalstatus/MartialStatusGraphElem'
 import SexGraphElem from './sex/SexGraphElem'
 import StateGraphElem from './state/StateGraphElem'
 
-function population() {
+function Population() {
     return (
       <div>
         <AgeGroupGraphElem/>
@@ -16,4 +16,4 @@ function population() {
     );
   }
   
-  export default population;
+  export default Population;

@@ -12,7 +12,7 @@ function GetGraphs()
 function StateGraphElem()
 {
     return (
-       <ChartElem title="Population by State of Residence" type="area-chart" graphs={GetGraphs()}/>
+       <ChartElem title="DACA Beneficiaries by State of Residence" type="area-chart" graphs={GetGraphs()}/>
     );
 }
 

@@ -1,11 +1,17 @@
 import rawData from '../../data/data.json';
 
+const performanceKeyName = "performance"
 const populationKeyName = "population"
 const byAgeGroupKeyName = "byAgeGroup"
 const byBirthCountryKeyName = "byBirthCountry"
 const byStateKeyName = "byState"
 const byMaritalStatusKeyName = "byMaritalStatus"
 const bySexKeyName = "bySex"
+const totalKeyName = "total"
+const initialKeyName = "initial"
+const renewalKeyName = "renewal"
+const intakeKeyName = "intake"
+const caseStatusKeyName = "intake"
 
 export function GetPopulationByAgeGroupByYearData()
 {
@@ -131,4 +137,44 @@ function GetPopulationKeys(category)
     }
     
     return Array.from(keys);
+}
+
+export function GetInitialPerformanceByYearData(category)
+{
+    let data = [];
+    for (var year of Object.keys(rawData.year))
+    {
+        if (rawData.year[year][performanceKeyName] != null &&
+            rawData.year[year][performanceKeyName][totalKeyName] != null &&
+            rawData.year[year][performanceKeyName][totalKeyName][initialKeyName] != null &&
+            rawData.year[year][performanceKeyName][totalKeyName][initialKeyName][category] != null)
+        {
+            let val = rawData.year[year][performanceKeyName][totalKeyName][initialKeyName][category];
+            val["year"] = year;
+
+            data.push(val)
+        }
+    }
+
+    return data;
+}
+
+export function GetRenewalPerformanceByYearData(category)
+{
+    let data = [];
+    for (var year of Object.keys(rawData.year))
+    {
+        if (rawData.year[year][performanceKeyName] != null &&
+            rawData.year[year][performanceKeyName][totalKeyName] != null &&
+            rawData.year[year][performanceKeyName][totalKeyName][renewalKeyName] != null &&
+            rawData.year[year][performanceKeyName][totalKeyName][renewalKeyName][category] != null)
+        {
+            let val = rawData.year[year][performanceKeyName][totalKeyName][renewalKeyName][category];
+            val["year"] = year;
+
+            data.push(val)
+        }
+    }
+
+    return data;
 }
