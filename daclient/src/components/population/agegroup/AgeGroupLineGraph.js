@@ -25,7 +25,9 @@ function AgeGroupLineGraph()
             <Line type="monotone" name="21-25" dataKey="twentOneToTwentyFive" stroke="#5DADE2" activeDot={{ r: 4 }} />
             <Line type="monotone" name="26-30" dataKey="twentySixToThrity" stroke="#48C9B0" activeDot={{ r: 4 }} />
             <Line type="monotone" name="31-35" dataKey="thirtyOneToThirtyFive" stroke="#F4D03F" activeDot={{ r: 4 }} />
-            <Line type="monotone" name="31-36" dataKey="thirtyOneToThirthySix" stroke="#5D6D7E" activeDot={{ r: 4 }} />
+            <Line type="monotone" name="31-36" dataKey="thirtyOneToThirtySix" stroke="#5D6D7E" activeDot={{ r: 4 }} />
+            <Line type="monotone" name="36-37" dataKey="thirtySixToThirtySeven" stroke="#BDC3C7" activeDot={{ r: 4 }} />
+            <Line type="monotone" name="36-39" dataKey="thirtySixToThirtyNine" stroke="#F6DDCC" activeDot={{ r: 4 }} />
             <Line type="monotone" name="Unknown" dataKey="unknown" stroke="#F5B041" activeDot={{ r: 4 }} />
         </LineChart>
     );

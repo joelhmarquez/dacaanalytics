@@ -25,7 +25,9 @@ function AgeGroupBarGraph()
             <Bar name="21-25" dataKey="twentOneToTwentyFive" fill="#5DADE2" />
             <Bar name="26-30" dataKey="twentySixToThrity" fill="#48C9B0" />
             <Bar name="31-35" dataKey="thirtyOneToThirtyFive" fill="#F4D03F" />
-            <Bar name="31-36" dataKey="thirtyOneToThirthySix" fill="#5D6D7E" />
+            <Bar name="31-36" dataKey="thirtyOneToThirtySix" fill="#5D6D7E" />
+            <Bar name="36-37" dataKey="thirtySixToThirtySeven" fill="#BDC3C7" />
+            <Bar name="36-39" dataKey="thirtySixToThirtyNine" fill="#F6DDCC" />
             <Bar name="Unknown" dataKey="unknown" fill="#F5B041" />
         </BarChart>
     );
