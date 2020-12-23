@@ -5,13 +5,12 @@ import {
     LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
   } from 'recharts';
 
-
-class CountryOfBirthLineGraph extends React.Component
+class StateLineGraph extends React.Component
 {
     constructor(props)
     {
         super(props);
-        let keys = DataProvider.GetPopulationByBirthCountryKeys()
+        let keys = DataProvider.GetPopulationByStateKeys()
         this.state = {keys: keys, selection: keys[0]};
 
         this.handleChange = this.handleChange.bind(this);
@@ -52,7 +51,7 @@ class CountryOfBirthLineGraph extends React.Component
 
     render()
     {
-        let data = DataProvider.GetPopulationByBirthCountry(this.state.selection)
+        let data = DataProvider.GetPopulationByState(this.state.selection)
         return (
             <div>
                 <select value={this.state.selection} onChange={this.handleChange}>
@@ -78,4 +77,4 @@ class CountryOfBirthLineGraph extends React.Component
     }
 }
 
-export default CountryOfBirthLineGraph;
+export default StateLineGraph;

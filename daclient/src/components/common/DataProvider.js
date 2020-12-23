@@ -3,6 +3,7 @@ import rawData from '../../data/data.json';
 const populationKeyName = "population"
 const byAgeGroupKeyName = "byAgeGroup"
 const byBirthCountryKeyName = "byBirthCountry"
+const byStateKeyName = "byState"
 const byMaritalStatusKeyName = "byMaritalStatus"
 const bySexKeyName = "bySex"
 
@@ -57,24 +58,6 @@ export function GetPopulationByBirthCountry(country)
     return data;
 }
 
-export function GetPopulationByBirthCountryKeys()
-{
-    let keys = new Set();
-    for (var year of Object.keys(rawData.year))
-    {
-        if (rawData.year[year][populationKeyName] != null &&
-            rawData.year[year][populationKeyName][byBirthCountryKeyName] != null)
-        {
-            for (var country of Object.keys(rawData.year[year][populationKeyName][byBirthCountryKeyName]))
-            {
-                keys.add(country)
-            }
-        }
-    }
-    
-    return Array.from(keys);
-}
-
 export function GetPopulationByMaritalStatusByYearData()
 {
     return GetPopulationByYear(byMaritalStatusKeyName);
@@ -83,6 +66,35 @@ export function GetPopulationByMaritalStatusByYearData()
 export function GetPopulationBySexByYearData()
 {
     return GetPopulationByYear(bySexKeyName);
+}
+
+export function GetPopulationByState(state)
+{
+    let data = [];
+    for (var year of Object.keys(rawData.year))
+    {
+        if (rawData.year[year][populationKeyName] != null &&
+            rawData.year[year][populationKeyName][byStateKeyName] != null &&
+            state in rawData.year[year][populationKeyName][byStateKeyName])
+        {
+            let val = {"year" : year};
+            val[state] = rawData.year[year][populationKeyName][byStateKeyName][state];
+
+            data.push(val)
+        }
+    }
+
+    return data;
+}
+
+export function GetPopulationByBirthCountryKeys()
+{
+    return GetPopulationKeys(byBirthCountryKeyName);
+}
+
+export function GetPopulationByStateKeys()
+{
+    return GetPopulationKeys(byStateKeyName);
 }
 
 function GetPopulationByYear(category)
@@ -101,4 +113,22 @@ function GetPopulationByYear(category)
     }
 
     return data;
+}
+
+function GetPopulationKeys(category)
+{
+    let keys = new Set();
+    for (var year of Object.keys(rawData.year))
+    {
+        if (rawData.year[year][populationKeyName] != null &&
+            rawData.year[year][populationKeyName][category] != null)
+        {
+            for (var val of Object.keys(rawData.year[year][populationKeyName][category]))
+            {
+                keys.add(val)
+            }
+        }
+    }
+    
+    return Array.from(keys);
 }
