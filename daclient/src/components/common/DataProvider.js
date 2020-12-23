@@ -10,8 +10,6 @@ const bySexKeyName = "bySex"
 const totalKeyName = "total"
 const initialKeyName = "initial"
 const renewalKeyName = "renewal"
-const intakeKeyName = "intake"
-const caseStatusKeyName = "intake"
 
 export function GetPopulationByAgeGroupByYearData()
 {
