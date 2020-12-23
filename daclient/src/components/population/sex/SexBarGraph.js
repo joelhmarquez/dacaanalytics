@@ -1,29 +1,44 @@
 import * as Constants from '../../common/Constants'
 import * as DataProvider from '../../common/DataProvider';
 import {
-    BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+    BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
   } from 'recharts';
+
+  function GetBars(data)
+  {
+      let count = 0;
+      let barsDict = {};
+  
+      data.forEach(function(dict){
+          for (var key of Object.keys(dict)){
+              if (key !== "year" && !(key in barsDict)){
+                  barsDict[key] = <Bar name={key.charAt(0).toUpperCase() + key.slice(1)} dataKey={key} fill={Constants.GRAPH_COLOR[count]} key={count} />
+                  count += 1
+              }
+          }
+      });
+  
+      return Object.values(barsDict);
+  }
 
 function SexBarGraph()
 {
     let data = DataProvider.GetSexByYearData();
 
     return (
-        <BarChart
-            width={Constants.GRAPH_WIDTH}
-            height={Constants.GRAPH_HEIGHT}
-            data={data}
-            margin={Constants.GRAPH_MARGIN}
-        >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="year" />
-            <YAxis />
-            <Tooltip formatter={(value) => new Intl.NumberFormat('en').format(value)} />
-            <Legend />
-            <Bar name="Male" dataKey="male" fill="#29B6F6" />
-            <Bar name="Female" dataKey="female" fill="#F06292" />
-            <Bar name="Unknown" dataKey="unknown" fill="#BDBDBD" />
-        </BarChart>
+        <ResponsiveContainer aspect={1.6}>
+            <BarChart
+                data={data}
+                margin={Constants.GRAPH_MARGIN}
+            >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="year" />
+                <YAxis />
+                <Tooltip formatter={(value) => new Intl.NumberFormat('en').format(value)} />
+                <Legend />
+                {GetBars(data)}
+            </BarChart>
+        </ResponsiveContainer>
     );
 }
 

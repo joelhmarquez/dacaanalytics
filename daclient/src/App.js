@@ -11,8 +11,8 @@ function App() {
       <div className="content-wrapper">
         <div className="container-fluid">
           <SexGraphElem/>
-          <AgeGroupGraphElem/>
           <MaritalStatusGraphElem/>
+          <AgeGroupGraphElem/>
         </div>
       </div>
     <Footer />

@@ -1,29 +1,44 @@
 import * as Constants from '../../common/Constants'
 import * as DataProvider from '../../common/DataProvider';
 import {
-    LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+    LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
   } from 'recharts';
+
+  function GetLines(data)
+  {
+      let count = 0;
+      let linesDict = {};
+  
+      data.forEach(function(dict){
+          for (var key of Object.keys(dict)){
+              if (key !== "year" && !(key in linesDict)){
+                  linesDict[key] = <Line type="monotone" name={key.charAt(0).toUpperCase() + key.slice(1)} dataKey={key} stroke={Constants.GRAPH_COLOR[count]} activeDot={{ r: 4 }} key={count} />
+                  count += 1
+              }
+          }
+      });
+  
+      return Object.values(linesDict);
+  }
 
 function SexLineGraph()
 {
     let data = DataProvider.GetSexByYearData();
 
     return (
-        <LineChart
-            width={Constants.GRAPH_WIDTH}
-            height={Constants.GRAPH_HEIGHT}
-            data={data}
-            margin={Constants.GRAPH_MARGIN}
-        >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="year" />
-            <YAxis />
-            <Tooltip formatter={(value) => new Intl.NumberFormat('en').format(value)} />
-            <Legend />
-            <Line type="monotone" name="Male" dataKey="male" stroke="#29B6F6" activeDot={{ r: 4 }} />
-            <Line type="monotone" name="Female" dataKey="female" stroke="#F06292" activeDot={{ r: 4 }} />
-            <Line type="monotone" name="unknown" dataKey="unknown" stroke="#BDBDBD" activeDot={{ r: 4 }} />
-        </LineChart>
+        <ResponsiveContainer aspect={1.6}>
+            <LineChart
+                data={data}
+                margin={Constants.GRAPH_MARGIN}
+            >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="year" />
+                <YAxis />
+                <Tooltip formatter={(value) => new Intl.NumberFormat('en').format(value)} />
+                <Legend />
+                {GetLines(data)}
+            </LineChart>
+        </ResponsiveContainer>
     );
 }
 
