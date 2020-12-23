@@ -26,7 +26,7 @@ function RenewalLineGraph(props)
     let data = DataProvider.GetRenewalPerformanceByYearData(props.category);
 
     return (
-        <ResponsiveContainer aspect={4}>
+        <ResponsiveContainer aspect={3}>
             <LineChart
                 data={data}
                 margin={Constants.GRAPH_MARGIN}

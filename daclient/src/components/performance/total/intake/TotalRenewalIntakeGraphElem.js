@@ -12,7 +12,7 @@ function GetGraphs()
 function TotalRenewalIntakeGraphElem()
 {
     return (
-       <ChartElem title="DACA Renewal Application Intake" type="area-chart" graphs={GetGraphs()}/>
+       <ChartElem title="Renewal DACA Application Intake" type="area-chart" graphs={GetGraphs()}/>
     );
 }
 

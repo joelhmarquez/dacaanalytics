@@ -12,7 +12,7 @@ function GetGraphs()
 function TotalInitialIntakeGraphElem()
 {
     return (
-       <ChartElem title="DACA Initial Application Intake" type="area-chart" graphs={GetGraphs()}/>
+       <ChartElem title="Initial DACA Application Intake" type="area-chart" graphs={GetGraphs()}/>
     );
 }
 

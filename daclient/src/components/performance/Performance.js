@@ -6,10 +6,10 @@ import TotalRenewalIntakeGraphElem from './total/intake/TotalRenewalIntakeGraphE
 function Performance() {
     return (
       <div>
-        <TotalInitialCaseStatusGraphElem/>
-        <TotalRenewalCaseStatusGraphElem/>
         <TotalInitialIntakeGraphElem/>
+        <TotalInitialCaseStatusGraphElem/>
         <TotalRenewalIntakeGraphElem/>
+        <TotalRenewalCaseStatusGraphElem/>
       </div>
     );
   }

@@ -12,7 +12,7 @@ function GetGraphs()
 function TotalRenewalCaseStatusGraphElem()
 {
     return (
-       <ChartElem title="DACA Renewal Application Case Status" type="area-chart" graphs={GetGraphs()}/>
+       <ChartElem title="Renewal DACA Application Case Status" type="area-chart" graphs={GetGraphs()}/>
     );
 }
 

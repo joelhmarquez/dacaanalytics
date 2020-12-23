@@ -12,7 +12,7 @@ function GetGraphs()
 function TotalInitialCaseStatusGraphElem()
 {
     return (
-       <ChartElem title="DACA Initial Application Case Status" type="area-chart" graphs={GetGraphs()}/>
+       <ChartElem title="Initial DACA Application Case Status" type="area-chart" graphs={GetGraphs()}/>
     );
 }
 
