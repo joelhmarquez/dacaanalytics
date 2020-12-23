@@ -7,10 +7,10 @@ function GetGraphs()
     return(
         <div className="row">
             <div className="col-lg-6">
-                <MaritalStatusBarGraph/>
+                <MaritalStatusLineGraph/>
             </div>
             <div className="col-lg-6">
-                <MaritalStatusLineGraph/>
+                <MaritalStatusBarGraph/>
             </div>
         </div>);
 }

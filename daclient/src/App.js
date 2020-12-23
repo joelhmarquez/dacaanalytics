@@ -1,8 +1,6 @@
-import AgeGroupGraphElem from './components/population/agegroup/AgeGroupGraphElem'
 import Footer from './components/common/Footer'
 import Nav from './components/common/Nav'
-import MaritalStatusGraphElem from './components/population/maritalstatus/MartialStatusGraphElem'
-import SexGraphElem from './components/population/sex/SexGraphElem'
+import Population from './components/population/Population'
 
 function App() {
   return (
@@ -10,9 +8,7 @@ function App() {
       <Nav />
       <div className="content-wrapper">
         <div className="container-fluid">
-          <AgeGroupGraphElem/>
-          <SexGraphElem/>
-          <MaritalStatusGraphElem/>
+          <Population/>
         </div>
       </div>
     <Footer />

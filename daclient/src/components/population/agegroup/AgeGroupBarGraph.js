@@ -25,7 +25,7 @@ function GetBars(data)
 
 function AgeGroupBarGraph()
 {
-    let data = DataProvider.GetAgeGroupByYearData();
+    let data = DataProvider.GetPopulationByAgeGroupByYearData();
 
     return (
         <ResponsiveContainer aspect={1.6}>

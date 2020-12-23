@@ -23,7 +23,7 @@ import {
 
 function SexLineGraph()
 {
-    let data = DataProvider.GetSexByYearData();
+    let data = DataProvider.GetPopulationBySexByYearData();
 
     return (
         <ResponsiveContainer aspect={1.6}>

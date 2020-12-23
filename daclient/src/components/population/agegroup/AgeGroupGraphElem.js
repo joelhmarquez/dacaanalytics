@@ -7,10 +7,10 @@ function GetGraphs()
     return(
         <div className="row">
             <div className="col-lg-6">
-                <AgeGroupBarGraph/>
+                <AgeGroupLineGraph/>
             </div>
             <div className="col-lg-6">
-                <AgeGroupLineGraph/>
+                <AgeGroupBarGraph/>
             </div>
         </div>);
 }

@@ -23,7 +23,7 @@ function GetLines(data)
 
 function MaritalStatusLineGraph()
 {
-    let data = DataProvider.GetMaritalStatusByYearData();
+    let data = DataProvider.GetPopulationByMaritalStatusByYearData();
 
     return (
         <ResponsiveContainer aspect={1.6}>

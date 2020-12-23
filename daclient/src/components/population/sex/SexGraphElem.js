@@ -7,10 +7,10 @@ function GetGraphs()
     return(
         <div className="row">
             <div className="col-lg-6">
-                <SexBarGraph/>
+                <SexLineGraph/>
             </div>
             <div className="col-lg-6">
-                <SexLineGraph/>
+                <SexBarGraph/>
             </div>
         </div>);
 }

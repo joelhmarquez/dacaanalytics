@@ -2,10 +2,11 @@ import rawData from '../../data/data.json';
 
 const populationKeyName = "population"
 const byAgeGroupKeyName = "byAgeGroup"
+const byBirthCountryKeyName = "byBirthCountry"
 const byMaritalStatusKeyName = "byMaritalStatus"
 const bySexKeyName = "bySex"
 
-export function GetAgeGroupByYearData()
+export function GetPopulationByAgeGroupByYearData()
 {
     let aboveThirtyKeyName = "aboveThirty"
     let aboveThirtyCategories = ["thirtyOneToThirtyFive", "thirtyOneToThirtySix", "thirtySixToThirtySeven", "thirtySixToThirtyNine"]
@@ -37,16 +38,18 @@ export function GetAgeGroupByYearData()
     return data;
 }
 
-export function GetMaritalStatusByYearData()
+export function GetPopulationByBirthCountry(country)
 {
     let data = [];
     for (var year of Object.keys(rawData.year))
     {
         if (rawData.year[year][populationKeyName] != null &&
-            rawData.year[year][populationKeyName][byMaritalStatusKeyName] != null)
+            rawData.year[year][populationKeyName][byBirthCountryKeyName] != null &&
+            country in rawData.year[year][populationKeyName][byBirthCountryKeyName])
         {
-            let val = rawData.year[year][populationKeyName][byMaritalStatusKeyName];
-            val["year"] = year;
+            let val = {"year" : year};
+            val[country] = rawData.year[year][populationKeyName][byBirthCountryKeyName][country];
+
             data.push(val)
         }
     }
@@ -54,15 +57,43 @@ export function GetMaritalStatusByYearData()
     return data;
 }
 
-export function GetSexByYearData()
+export function GetPopulationByBirthCountryKeys()
+{
+    let keys = new Set();
+    for (var year of Object.keys(rawData.year))
+    {
+        if (rawData.year[year][populationKeyName] != null &&
+            rawData.year[year][populationKeyName][byBirthCountryKeyName] != null)
+        {
+            for (var country of Object.keys(rawData.year[year][populationKeyName][byBirthCountryKeyName]))
+            {
+                keys.add(country)
+            }
+        }
+    }
+    
+    return Array.from(keys);
+}
+
+export function GetPopulationByMaritalStatusByYearData()
+{
+    return GetPopulationByYear(byMaritalStatusKeyName);
+}
+
+export function GetPopulationBySexByYearData()
+{
+    return GetPopulationByYear(bySexKeyName);
+}
+
+function GetPopulationByYear(category)
 {
     let data = [];
     for (var year of Object.keys(rawData.year))
     {
         if (rawData.year[year][populationKeyName] != null &&
-            rawData.year[year][populationKeyName][bySexKeyName] != null)
+            rawData.year[year][populationKeyName][category] != null)
         {
-            let val = rawData.year[year][populationKeyName][bySexKeyName];
+            let val = rawData.year[year][populationKeyName][category];
             val["year"] = year;
 
             data.push(val)
