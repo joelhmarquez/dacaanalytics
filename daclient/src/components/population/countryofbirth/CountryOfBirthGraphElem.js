@@ -1,54 +1,19 @@
 import ChartElem from '../../common/ChartElem'
-import CountryLineGraph from './CountyOfBirthLineGraph';
-import React from 'react';
-import * as DataProvider from '../../common/DataProvider';
+import CountryOfBirthLineGraph from './CountyOfBirthLineGraph';
 
-class CountryOfBirthGraphElem extends React.Component
+function GetGraphs()
 {
-    constructor(props)
-    {
-        super(props);
-        let keys = DataProvider.GetPopulationByBirthCountryKeys()
-        this.state = {keys: keys, selection: keys[0]};
-
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(event)
-    {
-        this.setState({selection: event.target.value});
-    }
-
-    GetSelectionOptions()
-    {
-        let options = []
-        for (var option of this.state.keys)
-        {
-            options.push(<option value={option} key={option}>{option}</option>)
-        }
-
-        return options;
-    }
-
-    GetGraphs(country)
-    {
-        return(
+    return(
         <div>
-            <select value={this.state.selection} onChange={this.handleChange}>
-                {this.GetSelectionOptions()}
-            </select>
-            <br/>
-            <br/>
-            <CountryLineGraph country={country}/>
+            <CountryOfBirthLineGraph/>
         </div>);
-    }
+}
 
-    render()
-    {
-        return (
-            <ChartElem title="Population by Country" type="area-chart" graphs={this.GetGraphs(this.state.selection)}/>
-        );
-    }
+function CountryOfBirthGraphElem()
+{
+    return (
+       <ChartElem title="Population by Country of Birth" type="area-chart" graphs={GetGraphs()}/>
+    );
 }
 
 export default CountryOfBirthGraphElem;
