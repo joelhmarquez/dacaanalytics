@@ -48,9 +48,11 @@ function About()
                     <h5>About The Creator</h5>
                     <p>
                         My name is Joel, I am a 23-year-old DACA recipient originally from Mexico. I have lived in the US since the age of 8 and have been a DACA recipient since shortly after the program's creation—2013.
-                        As most DACA recipients will tell you, DACA has opened up a lot of opportunities for those of us lucky enough to qualify.
-                        The work authorization it provides along with the deferred action helped me find a way through college and allowed me to enter the workforce following my graduation in 2018.
-                        I joined Microsoft as a software engineer following my college graduation where I get to contribute to building the calling and meetings services that power Microsoft Teams and Skype alongside an amazing team of engineers.
+                        As most DACA recipients will attest to, DACA has opened up a lot of opportunities for those of us lucky enough to qualify.
+                        For me, the work authorization and deferred action helped me find a way through college where I graduated in the spring of 2018 with a computer science degree.
+                        It also allowed me to enter the workforce as a professional following my graduation. I joined Microsoft as a software engineer out of college and have been there since.
+                        I get to contribute along an amazing team of engineers to building the calling and meeting services that power Microsoft Teams and Skype.
+                        It is truly a dream job and I am greatful to get to work on something that positively improves the lives of the millions of daily users. 
                     </p>
                     <p>
                         Learn more about me and what I am up to it at my <a href="https://joelhmarquez.com" target="_blank" rel="noreferrer">personal site</a>
