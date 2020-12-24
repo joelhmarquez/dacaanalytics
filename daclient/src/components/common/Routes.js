@@ -7,7 +7,7 @@ import { HashRouter as Router, Switch, Route, Redirect, Link } from "react-route
 function Routes() {
     return (
       <div>
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router>
           <Navbar bg="light" expand="lg" className="fixed-top">
             <Navbar.Brand as={Link} to="/">DACA Analytics</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
