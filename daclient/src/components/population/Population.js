@@ -9,6 +9,9 @@ import StateGeoElem from './StateGeoElem'
 function Population() {
     return (
       <div>
+        <div class="alert alert-warning" role="alert">
+          Note: Population counts of less than 10 people are redacted in USCIS reports to protect individual identities. They are represented as zero in all visualizations on this site.
+        </div>
         <CountryOfBirthGeoElem/>
         <StateGeoElem/>
         <AgeGroupGraphElem/>
