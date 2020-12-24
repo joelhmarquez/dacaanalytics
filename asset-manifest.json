@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/dacaanalytics/static/css/main.7d9d9b0e.chunk.css",
-    "main.js": "/dacaanalytics/static/js/main.618d344b.chunk.js",
-    "main.js.map": "/dacaanalytics/static/js/main.618d344b.chunk.js.map",
+    "main.js": "/dacaanalytics/static/js/main.edfd5816.chunk.js",
+    "main.js.map": "/dacaanalytics/static/js/main.edfd5816.chunk.js.map",
     "runtime-main.js": "/dacaanalytics/static/js/runtime-main.be4064e0.js",
     "runtime-main.js.map": "/dacaanalytics/static/js/runtime-main.be4064e0.js.map",
     "static/css/2.20aa2d7b.chunk.css": "/dacaanalytics/static/css/2.20aa2d7b.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.20aa2d7b.chunk.css",
     "static/js/2.a8c0d6ae.chunk.js",
     "static/css/main.7d9d9b0e.chunk.css",
-    "static/js/main.618d344b.chunk.js"
+    "static/js/main.edfd5816.chunk.js"
   ]
 }
