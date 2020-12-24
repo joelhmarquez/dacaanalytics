@@ -13,6 +13,10 @@ function Footer()
                         The sections below describe the information that you can find in the two visualization tools, population and performance, respectively.
                         I will continue to update these tools with additional visualizations of the existing data, as well as visualizations for new data that I haven't gotten a chance to explore as much, such as performance data per birth country and by state of residence, to name a couple.
                     </p>
+                    <p>
+                        Some of the numbers in the datasets were ommitted in the USCIS reports since the number was under 10 and therefore could potentially identify individual recipients.
+                        In the reports, they were marked as 'D'. In the visualizations on this site, I have gone ahead and just marked them as zero instead. So please note that some of the results marked zero may actually be an undisclosed number less than 10.
+                    </p>
                     <h5>Population Data</h5>
                     <p>
                         The population data visualization tool focuses on the characteristics of active DACA recipients.
@@ -36,7 +40,7 @@ function Footer()
                     <p>There are some additional visualizations that I will add to this tool such as the performance data for a given country of birth and state of residence, as well as additional performance data such as number of expiring permits for a given month in the current year.</p>
                     <h5>About The Creator</h5>
                     <p>
-                        My name is Joel Marquez, I am a 23-year-old DACA recipient originally from Mexico. I have lived in the US since the age of 8 and have been a DACA recipient since shortly after the program's creation—2013.
+                        My name is Joel, I am a 23-year-old DACA recipient originally from Mexico. I have lived in the US since the age of 8 and have been a DACA recipient since shortly after the program's creation—2013.
                         As most DACA recipients will tell you, DACA has opened up a lot of opportunities for those of us lucky enough to qualify.
                         The work authorization it provides along with the deferred action helped me find a way through college and allowed me to enter the workforce following my graduation in 2018.
                         I joined Microsoft as a software engineer following my college graduation where I get to contribute to building the calling and meetings services that power Microsoft Teams and Skype alongside an amazing team of engineers.
