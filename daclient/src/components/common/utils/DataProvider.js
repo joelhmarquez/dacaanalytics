@@ -1,4 +1,4 @@
-import rawData from '../../data/data.json';
+import rawData from '../../../data/data.json';
 
 const performanceKeyName = "performance"
 const populationKeyName = "population"

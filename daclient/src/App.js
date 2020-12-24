@@ -1,19 +1,17 @@
 import Footer from './components/common/Footer'
-import { BrowserRouter  as Router } from "react-router-dom";
 import Routes from './components/common/Routes'
+import { BrowserRouter  as Router } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <Router>
-        <div className="content-wrapper">
-          <div className="container-fluid">
-            <Routes/>
-          </div>
+    <Router>
+      <div className="content-wrapper">
+        <div className="container-fluid">
+          <Routes/>
         </div>
-        <Footer />
-      </Router>
-    </div>
+      </div>
+      <Footer />
+    </Router>
   );
 }
 

@@ -1,4 +1,4 @@
-function SexGraphElem(props)
+function ChartElem(props)
 {
     return (
         <div>
@@ -8,7 +8,7 @@ function SexGraphElem(props)
                 {props.title}
                 </div>
                 <div className="card-body">
-                    {props.graphs}
+                    {props.content}
                 </div>
             </div>
             <br/>
@@ -16,4 +16,4 @@ function SexGraphElem(props)
     );
 }
 
-export default SexGraphElem;
+export default ChartElem;

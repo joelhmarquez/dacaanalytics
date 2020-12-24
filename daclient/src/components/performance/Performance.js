@@ -1,7 +1,7 @@
-import TotalInitialCaseStatusGraphElem from './total/casestatus/TotalInitialCaseStatusGraphElem';
-import TotalRenewalCaseStatusGraphElem from './total/casestatus/TotalRenewalCaseStatusGraphElem';
-import TotalInitialIntakeGraphElem from './total/intake/TotalInitialIntakeGraphElem'
-import TotalRenewalIntakeGraphElem from './total/intake/TotalRenewalIntakeGraphElem'
+import TotalInitialCaseStatusGraphElem from './total/TotalInitialCaseStatusGraphElem';
+import TotalRenewalCaseStatusGraphElem from './total/TotalRenewalCaseStatusGraphElem';
+import TotalInitialIntakeGraphElem from './total/TotalInitialIntakeGraphElem'
+import TotalRenewalIntakeGraphElem from './total/TotalRenewalIntakeGraphElem'
 
 function Performance() {
     return (

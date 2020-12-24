@@ -1,8 +1,8 @@
-import AgeGroupGraphElem from './agegroup/AgeGroupGraphElem'
-import CountryOfBirthGraphElem from './countryofbirth/CountryOfBirthGraphElem'
-import MaritalStatusGraphElem from './maritalstatus/MartialStatusGraphElem'
-import SexGraphElem from './sex/SexGraphElem'
-import StateGraphElem from './state/StateGraphElem'
+import AgeGroupGraphElem from './AgeGroupGraphElem'
+import CountryOfBirthGraphElem from './CountryOfBirthGraphElem'
+import MaritalStatusGraphElem from './MartialStatusGraphElem'
+import SexGraphElem from './SexGraphElem'
+import StateGraphElem from './StateGraphElem'
 
 function Population() {
     return (
