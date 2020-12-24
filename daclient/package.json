@@ -1,6 +1,6 @@
 {
   "name": "daclient",
-  "homepage": "http://joelhmarquez.github.io/DacaAnalytics",
+  "homepage": "http://joelhmarquez.github.io/dacaanalytics",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
