@@ -1,3 +1,4 @@
+import About from '../common/About'
 import Performance from '../performance/Performance'
 import Population from '../population/Population'
 import { Navbar,Nav } from 'react-bootstrap'
@@ -14,6 +15,7 @@ function Routes() {
               <Nav className="ml-auto">
                 <Nav.Link as={Link} to="/population" >Population Data</Nav.Link>
                 <Nav.Link as={Link} to="/performance" >Performance Data</Nav.Link>
+                <Nav.Link as={Link} to="/about" >About</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
@@ -23,6 +25,7 @@ function Routes() {
               <Redirect to="/population" />
             </Route>
             <Route exact path="/performance" component={Performance} />
+            <Route exact path="/about" component={About} />
           </Switch>
         </Router>
       </div>
