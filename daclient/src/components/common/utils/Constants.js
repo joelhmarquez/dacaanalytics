@@ -7,4 +7,4 @@ export const DOUBLE_GRAPH_ASPECT = 1.6
 
 // Data Provider Constants
 export const CASE_STATUS_KEY = "caseStatus";
-export const INTAKE_KEY = "caseStatus";
+export const INTAKE_KEY = "intake";
