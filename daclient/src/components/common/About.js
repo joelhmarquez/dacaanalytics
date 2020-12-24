@@ -6,7 +6,7 @@ function About()
                 <div class="col-lg-12 mx-auto">
                     <p>Welcome to DACA Analytics!</p>
                     <p>
-                        This is a project born out of a desire to better visualize the make-up of DACA Beneficiaries as well as the performance of the program throughout its lifetime.
+                        This is a project born out of a desire to better visualize the make-up of DACA beneficiaries as well as the performance of the program throughout its lifetime.
                         All of the data presented in this application was extracted from official USCIS reports found on the <a href="https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data">USCIS Immigration and Citizenship Data</a> webpage.
                     </p>
                     <p>
@@ -51,11 +51,11 @@ function About()
                         As most DACA recipients will attest to, DACA has opened up a lot of opportunities for those of us lucky enough to qualify.
                         For me, the work authorization and deferred action helped me find a way through college where I graduated in the spring of 2018 with a computer science degree.
                         It also allowed me to enter the workforce as a professional following my graduation. I joined Microsoft as a software engineer out of college and have been there since.
-                        I get to contribute along an amazing team of engineers to building the calling and meeting services that power Microsoft Teams and Skype.
-                        It is truly a dream job and I am greatful to get to work on something that positively improves the lives of the millions of daily users. 
+                        I get to contribute alongside an amazing team of engineers to building the calling and meeting services that power Microsoft Teams and Skype.
+                        It is truly a dream job and I am grateful to work on something that positively improves the lives of the millions of daily users. 
                     </p>
                     <p>
-                        Learn more about me and what I am up to it at my <a href="https://joelhmarquez.com" target="_blank" rel="noreferrer">personal site</a>
+                        Learn more about me and what I am up to it at my <a href="https://joelhmarquez.com" target="_blank" rel="noreferrer">personal site</a>.
                     </p>
                 </div>
             </div>
