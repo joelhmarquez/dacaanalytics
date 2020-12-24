@@ -1,15 +1,7 @@
 import rawData from '../../../data/data.json';
+import * as Constants from './Constants'
 
-const performanceKeyName = "performance"
-const populationKeyName = "population"
-const byAgeGroupKeyName = "byAgeGroup"
-const byBirthCountryKeyName = "byBirthCountry"
-const byStateKeyName = "byState"
-const byMaritalStatusKeyName = "byMaritalStatus"
-const bySexKeyName = "bySex"
-const totalKeyName = "total"
-const initialKeyName = "initial"
-const renewalKeyName = "renewal"
+// Population Data Provider
 
 export function GetPopulationByAgeGroupByYearData()
 {
@@ -18,11 +10,11 @@ export function GetPopulationByAgeGroupByYearData()
     let data = [];
     for (var year of Object.keys(rawData.year))
     {
-        if (rawData.year[year][populationKeyName] != null &&
-            rawData.year[year][populationKeyName][byAgeGroupKeyName] != null)
+        if (rawData.year[year][Constants.POPULATION_KEY] != null &&
+            rawData.year[year][Constants.POPULATION_KEY][Constants.BY_AGE_GROUP_KEY] != null)
         {
-            let val = rawData.year[year][populationKeyName][byAgeGroupKeyName];
-            val["year"] = year;
+            let val = rawData.year[year][Constants.POPULATION_KEY][Constants.BY_AGE_GROUP_KEY];
+            val[Constants.YEAR_KEY] = year;
 
             for (var category of aboveThirtyCategories){
                 if (category in val){
@@ -48,12 +40,12 @@ export function GetPopulationByBirthCountry(country)
     let data = [];
     for (var year of Object.keys(rawData.year))
     {
-        if (rawData.year[year][populationKeyName] != null &&
-            rawData.year[year][populationKeyName][byBirthCountryKeyName] != null &&
-            country in rawData.year[year][populationKeyName][byBirthCountryKeyName])
+        if (rawData.year[year][Constants.POPULATION_KEY] != null &&
+            rawData.year[year][Constants.POPULATION_KEY][Constants.BY_BIRTH_COUNTRY_KEY] != null &&
+            country in rawData.year[year][Constants.POPULATION_KEY][Constants.BY_BIRTH_COUNTRY_KEY])
         {
             let val = {"year" : year};
-            val[country] = rawData.year[year][populationKeyName][byBirthCountryKeyName][country];
+            val[country] = rawData.year[year][Constants.POPULATION_KEY][Constants.BY_BIRTH_COUNTRY_KEY][country];
 
             data.push(val)
         }
@@ -62,29 +54,17 @@ export function GetPopulationByBirthCountry(country)
     return data;
 }
 
-export function GetPopulationByMaritalStatusByYearData()
+export function GetPopulationByBirthCountryForYear(year)
 {
-    return GetPopulationByYear(byMaritalStatusKeyName);
-}
+    let data = [[Constants.GOOGLE_MAPS_COUNTRY_KEY, Constants.POPULATION_KEY]];
 
-export function GetPopulationBySexByYearData()
-{
-    return GetPopulationByYear(bySexKeyName);
-}
-
-export function GetPopulationByState(state)
-{
-    let data = [];
-    for (var year of Object.keys(rawData.year))
+    if (rawData.year[year] != null &&
+        rawData.year[year][Constants.POPULATION_KEY] != null &&
+        rawData.year[year][Constants.POPULATION_KEY][Constants.BY_BIRTH_COUNTRY_KEY])
     {
-        if (rawData.year[year][populationKeyName] != null &&
-            rawData.year[year][populationKeyName][byStateKeyName] != null &&
-            state in rawData.year[year][populationKeyName][byStateKeyName])
+        for (var country of Object.keys(rawData.year[year][Constants.POPULATION_KEY][Constants.BY_BIRTH_COUNTRY_KEY]))
         {
-            let val = {"year" : year};
-            val[state] = rawData.year[year][populationKeyName][byStateKeyName][state];
-
-            data.push(val)
+            data.push([country, rawData.year[year][Constants.POPULATION_KEY][Constants.BY_BIRTH_COUNTRY_KEY][country]])
         }
     }
 
@@ -93,24 +73,45 @@ export function GetPopulationByState(state)
 
 export function GetPopulationByBirthCountryKeys()
 {
-    return GetPopulationKeys(byBirthCountryKeyName);
+    return GetPopulationKeys(Constants.BY_BIRTH_COUNTRY_KEY);
 }
 
-export function GetPopulationByStateKeys()
+export function GetPopulationByBirthCountryYearKeys()
 {
-    return GetPopulationKeys(byStateKeyName);
+    let keys = new Set();
+    for (var year of Object.keys(rawData.year))
+    {
+        if (rawData.year[year][Constants.POPULATION_KEY] != null &&
+            rawData.year[year][Constants.POPULATION_KEY][Constants.BY_BIRTH_COUNTRY_KEY] != null)
+        {
+            keys.add(year)
+        }
+    }
+    
+    return Array.from(keys);
 }
 
-function GetPopulationByYear(category)
+export function GetPopulationByMaritalStatusByYearData()
+{
+    return GetPopulationByYear(Constants.BY_MARITAL_STATUS_KEY);
+}
+
+export function GetPopulationBySexByYearData()
+{
+    return GetPopulationByYear(Constants.BY_SEX_KEY);
+}
+
+export function GetPopulationByState(state)
 {
     let data = [];
     for (var year of Object.keys(rawData.year))
     {
-        if (rawData.year[year][populationKeyName] != null &&
-            rawData.year[year][populationKeyName][category] != null)
+        if (rawData.year[year][Constants.POPULATION_KEY] != null &&
+            rawData.year[year][Constants.POPULATION_KEY][Constants.BY_STATE_KEY] != null &&
+            state in rawData.year[year][Constants.POPULATION_KEY][Constants.BY_STATE_KEY])
         {
-            let val = rawData.year[year][populationKeyName][category];
-            val["year"] = year;
+            let val = {"year" : year};
+            val[state] = rawData.year[year][Constants.POPULATION_KEY][Constants.BY_STATE_KEY][state];
 
             data.push(val)
         }
@@ -119,36 +120,57 @@ function GetPopulationByYear(category)
     return data;
 }
 
-function GetPopulationKeys(category)
+export function GetPopulationByStateForYear(year)
+{
+    let data = [[Constants.GOOGLE_MAPS_STATE_KEY, Constants.POPULATION_KEY]];
+
+    if (rawData.year[year] != null &&
+        rawData.year[year][Constants.POPULATION_KEY] != null &&
+        rawData.year[year][Constants.POPULATION_KEY][Constants.BY_STATE_KEY])
+    {
+        for (var state of Object.keys(rawData.year[year][Constants.POPULATION_KEY][Constants.BY_STATE_KEY]))
+        {
+            data.push([state, rawData.year[year][Constants.POPULATION_KEY][Constants.BY_STATE_KEY][state]])
+        }
+    }
+
+    return data;
+}
+
+export function GetPopulationByStateKeys()
+{
+    return GetPopulationKeys(Constants.BY_STATE_KEY);
+}
+
+export function GetPopulationByStateYearKeys()
 {
     let keys = new Set();
     for (var year of Object.keys(rawData.year))
     {
-        if (rawData.year[year][populationKeyName] != null &&
-            rawData.year[year][populationKeyName][category] != null)
+        if (rawData.year[year][Constants.POPULATION_KEY] != null &&
+            rawData.year[year][Constants.POPULATION_KEY][Constants.BY_STATE_KEY] != null)
         {
-            for (var val of Object.keys(rawData.year[year][populationKeyName][category]))
-            {
-                keys.add(val)
-            }
+            keys.add(year)
         }
     }
     
     return Array.from(keys);
 }
 
+// Performance Data Provider
+
 export function GetInitialPerformanceByYearData(category)
 {
     let data = [];
     for (var year of Object.keys(rawData.year))
     {
-        if (rawData.year[year][performanceKeyName] != null &&
-            rawData.year[year][performanceKeyName][totalKeyName] != null &&
-            rawData.year[year][performanceKeyName][totalKeyName][initialKeyName] != null &&
-            rawData.year[year][performanceKeyName][totalKeyName][initialKeyName][category] != null)
+        if (rawData.year[year][Constants.PERFORMANCE_KEY] != null &&
+            rawData.year[year][Constants.PERFORMANCE_KEY][Constants.TOTAL_KEY] != null &&
+            rawData.year[year][Constants.PERFORMANCE_KEY][Constants.TOTAL_KEY][Constants.INITIAL_KEY] != null &&
+            rawData.year[year][Constants.PERFORMANCE_KEY][Constants.TOTAL_KEY][Constants.INITIAL_KEY][category] != null)
         {
-            let val = rawData.year[year][performanceKeyName][totalKeyName][initialKeyName][category];
-            val["year"] = year;
+            let val = rawData.year[year][Constants.PERFORMANCE_KEY][Constants.TOTAL_KEY][Constants.INITIAL_KEY][category];
+            val[Constants.YEAR_KEY] = year;
 
             data.push(val)
         }
@@ -162,17 +184,55 @@ export function GetRenewalPerformanceByYearData(category)
     let data = [];
     for (var year of Object.keys(rawData.year))
     {
-        if (rawData.year[year][performanceKeyName] != null &&
-            rawData.year[year][performanceKeyName][totalKeyName] != null &&
-            rawData.year[year][performanceKeyName][totalKeyName][renewalKeyName] != null &&
-            rawData.year[year][performanceKeyName][totalKeyName][renewalKeyName][category] != null)
+        if (rawData.year[year][Constants.PERFORMANCE_KEY] != null &&
+            rawData.year[year][Constants.PERFORMANCE_KEY][Constants.TOTAL_KEY] != null &&
+            rawData.year[year][Constants.PERFORMANCE_KEY][Constants.TOTAL_KEY][Constants.RENEWAL_KEY] != null &&
+            rawData.year[year][Constants.PERFORMANCE_KEY][Constants.TOTAL_KEY][Constants.RENEWAL_KEY][category] != null)
         {
-            let val = rawData.year[year][performanceKeyName][totalKeyName][renewalKeyName][category];
-            val["year"] = year;
+            let val = rawData.year[year][Constants.PERFORMANCE_KEY][Constants.TOTAL_KEY][Constants.RENEWAL_KEY][category];
+            val[Constants.YEAR_KEY] = year;
 
             data.push(val)
         }
     }
 
     return data;
+}
+
+// Helpers
+
+function GetPopulationByYear(category)
+{
+    let data = [];
+    for (var year of Object.keys(rawData.year))
+    {
+        if (rawData.year[year][Constants.POPULATION_KEY] != null &&
+            rawData.year[year][Constants.POPULATION_KEY][category] != null)
+        {
+            let val = rawData.year[year][Constants.POPULATION_KEY][category];
+            val[Constants.YEAR_KEY] = year;
+
+            data.push(val)
+        }
+    }
+
+    return data;
+}
+
+function GetPopulationKeys(category)
+{
+    let keys = new Set();
+    for (var year of Object.keys(rawData.year))
+    {
+        if (rawData.year[year][Constants.POPULATION_KEY] != null &&
+            rawData.year[year][Constants.POPULATION_KEY][category] != null)
+        {
+            for (var val of Object.keys(rawData.year[year][Constants.POPULATION_KEY][category]))
+            {
+                keys.add(val)
+            }
+        }
+    }
+    
+    return Array.from(keys);
 }

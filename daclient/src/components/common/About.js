@@ -1,4 +1,4 @@
-function Footer()
+function About()
 {
     return (
         <div class="container">
@@ -23,13 +23,14 @@ function Footer()
                         It examines the trends in population for a given category over time.   
                     </p>
                     <p>
-                        The first three categories explored are population by age group, sex, and marital status.
+                        Three of categories explored are population by age group, sex, and marital status.
                         In the given line and bar charts, we can explore how the population has changed over time for each given group as well how each option compares to the rest.
                     </p>
                     <p>
                         The other two categories explored are population by birth country and by state of residence.
-                        In the tools provided, you can select a country or state from the drop-down lists and examine the population changes for the given country/state throughout the years.
-                        I am working on adding a couple more visualizations using this data, making use of the geo properties of the data to enhance the user experience by plotting it on geo maps.
+                        There are two visualizations for these categories.
+                        In the first, we can select a country or state from the drop-down lists and examine the population changes for the given country/state throughout the years.
+                        The second are geomap visualizations where we can hover over a given country/state and see the population of DACA beneficiaries from the give country/state. 
                     </p>
                     <h5>Performance Data</h5>
                     <p>The performance data visualization tool explores the administrative data provided by USCIS regarding DACA.</p>
@@ -54,4 +55,4 @@ function Footer()
     );
 }
 
-export default Footer;
+export default About;
