@@ -10,13 +10,15 @@ function About()
                         All of the data presented in this application was extracted from official USCIS reports found on the <a href="https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data">USCIS Immigration and Citizenship Data</a> webpage.
                     </p>
                     <p>
-                        The sections below describe the information that you can find in the two visualization tools, population and performance, respectively.
+                        The sections below describe the information that can be found in the two visualization tools, population and performance, respectively.
                         I will continue to update these tools with additional visualizations of the existing data, as well as visualizations for new data that I haven't gotten a chance to explore as much, such as performance data per birth country and by state of residence, to name a couple.
                     </p>
                     <p>
-                        Some of the numbers in the datasets were ommitted in the USCIS reports since the number was under 10 and therefore could potentially identify individual recipients.
-                        In the reports, they were marked as 'D'. In the visualizations on this site, I have gone ahead and just marked them as zero instead. So please note that some of the results marked zero may actually be an undisclosed number less than 10.
+                        Some of the numbers in the datasets were redacted in the USCIS reports since the number was under 10 and therefore could potentially identify individual recipients.
+                        In the reports, they were marked as 'D'; in the visualizations on this site, they are instead marked as zero.
+                        So please note that some of the results marked zero may actually be an undisclosed number less than 10.
                     </p>
+                    
                     <h5>Population Data</h5>
                     <p>
                         The population data visualization tool focuses on the characteristics of active DACA recipients.
@@ -29,9 +31,12 @@ function About()
                     <p>
                         The other two categories explored are population by birth country and by state of residence.
                         There are two visualizations for these categories.
-                        In the first, we can select a country or state from the drop-down lists and examine the population changes for the given country/state throughout the years.
-                        The second are geomap visualizations where we can hover over a given country/state and see the population of DACA beneficiaries from the give country/state. 
+                        The first are geomap visualizations where we can hover over a given country/state and see the population of DACA beneficiaries from the give country/state.
+                        We can also toggle between year for which dataset we wish to use.
+                        The second set of visualizations are line graphs in which we can select a country or state from the drop-down lists and examine the population changes throughout the years.
                     </p>
+                    <p>Population data was only included from 2017 onwards and thus we don't have a complete picture, but the information that is available is quite interesting.</p>
+                    
                     <h5>Performance Data</h5>
                     <p>The performance data visualization tool explores the administrative data provided by USCIS regarding DACA.</p>
                     <p>
@@ -39,6 +44,7 @@ function About()
                         We are also able to explore the accepted applications further by examining how many were accepted, rejected and pending for a given year.
                     </p>
                     <p>There are some additional visualizations that I will add to this tool such as the performance data for a given country of birth and state of residence, as well as additional performance data such as number of expiring permits for a given month in the current year.</p>
+                    
                     <h5>About The Creator</h5>
                     <p>
                         My name is Joel, I am a 23-year-old DACA recipient originally from Mexico. I have lived in the US since the age of 8 and have been a DACA recipient since shortly after the program's creation—2013.
