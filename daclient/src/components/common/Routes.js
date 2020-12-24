@@ -2,7 +2,7 @@ import About from '../common/About'
 import Performance from '../performance/Performance'
 import Population from '../population/Population'
 import { Navbar,Nav } from 'react-bootstrap'
-import { BrowserRouter as Router, Switch, Route, Redirect, Link } from "react-router-dom";
+import { HashRouter as Router, Switch, Route, Redirect, Link } from "react-router-dom";
 
 function Routes() {
     return (
