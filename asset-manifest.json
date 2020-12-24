@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/dacaanalytics/static/css/main.7d9d9b0e.chunk.css",
-    "main.js": "/dacaanalytics/static/js/main.5699c75a.chunk.js",
-    "main.js.map": "/dacaanalytics/static/js/main.5699c75a.chunk.js.map",
+    "main.js": "/dacaanalytics/static/js/main.90316c0f.chunk.js",
+    "main.js.map": "/dacaanalytics/static/js/main.90316c0f.chunk.js.map",
     "runtime-main.js": "/dacaanalytics/static/js/runtime-main.976bec92.js",
     "runtime-main.js.map": "/dacaanalytics/static/js/runtime-main.976bec92.js.map",
     "static/css/2.20aa2d7b.chunk.css": "/dacaanalytics/static/css/2.20aa2d7b.chunk.css",
-    "static/js/2.76589715.chunk.js": "/dacaanalytics/static/js/2.76589715.chunk.js",
-    "static/js/2.76589715.chunk.js.map": "/dacaanalytics/static/js/2.76589715.chunk.js.map",
+    "static/js/2.254a6400.chunk.js": "/dacaanalytics/static/js/2.254a6400.chunk.js",
+    "static/js/2.254a6400.chunk.js.map": "/dacaanalytics/static/js/2.254a6400.chunk.js.map",
     "static/js/3.b5caba5d.chunk.js": "/dacaanalytics/static/js/3.b5caba5d.chunk.js",
     "static/js/3.b5caba5d.chunk.js.map": "/dacaanalytics/static/js/3.b5caba5d.chunk.js.map",
     "index.html": "/dacaanalytics/index.html",
     "static/css/2.20aa2d7b.chunk.css.map": "/dacaanalytics/static/css/2.20aa2d7b.chunk.css.map",
     "static/css/main.7d9d9b0e.chunk.css.map": "/dacaanalytics/static/css/main.7d9d9b0e.chunk.css.map",
-    "static/js/2.76589715.chunk.js.LICENSE.txt": "/dacaanalytics/static/js/2.76589715.chunk.js.LICENSE.txt"
+    "static/js/2.254a6400.chunk.js.LICENSE.txt": "/dacaanalytics/static/js/2.254a6400.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.976bec92.js",
     "static/css/2.20aa2d7b.chunk.css",
-    "static/js/2.76589715.chunk.js",
+    "static/js/2.254a6400.chunk.js",
     "static/css/main.7d9d9b0e.chunk.css",
-    "static/js/main.5699c75a.chunk.js"
+    "static/js/main.90316c0f.chunk.js"
   ]
 }
