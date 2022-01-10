@@ -8,7 +8,7 @@ function GetContent()
 {
     let data = DataProvider.GetInitialPerformanceByYearData(Constants.CASE_STATUS_KEY);
     let lines = Utils.GetLinesFromData(data, Utils.WithUppercaseFirstLetter)
-    return(<LineGraph aspect={Constants.SINGLE_GRAPH_ASPECT} data={data} lines={lines}/>);
+    return(<LineGraph aspect={Constants.SINGLE_GRAPH_ASPECT} height={Constants.GRAPH_HEIGHT} data={data} lines={lines}/>);
 }
 
 function TotalInitialCaseStatusGraphElem()

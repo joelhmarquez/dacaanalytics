@@ -33,7 +33,7 @@ class CountryOfBirthGraphElem extends React.Component
                 </select>
                 <br/>
                 <br/>
-                <LineGraph aspect={Constants.SINGLE_GRAPH_ASPECT} data={data} lines={lines}/>
+                <LineGraph aspect={Constants.SINGLE_GRAPH_ASPECT} height={Constants.GRAPH_HEIGHT} data={data} lines={lines}/>
             </div>);
     }
 

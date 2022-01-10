@@ -6,7 +6,7 @@ import {
 function LineGraph(props)
 {
     return (
-        <ResponsiveContainer aspect={props.aspect}>
+        <ResponsiveContainer height={props.height}>
             <LineChart
                 data={props.data}
                 margin={Constants.GRAPH_MARGIN}

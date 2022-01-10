@@ -11,7 +11,7 @@ function GetGraphs()
     return(
         <div className="row">
             <div className="col-lg-12">
-             <LineGraph aspect={Constants.SINGLE_GRAPH_ASPECT} data={data} lines={lines}/>
+             <LineGraph aspect={Constants.SINGLE_GRAPH_ASPECT} height={Constants.GRAPH_HEIGHT} data={data} lines={lines}/>
             </div>
         </div>);
 }

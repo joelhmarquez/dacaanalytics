@@ -3,7 +3,7 @@ function ChartElem(props)
     return (
         <div>
             <br/>
-            <div className="card lg-6">
+            <div className="card lg-12">
                 <div className="card-header">
                 {props.title}
                 </div>
