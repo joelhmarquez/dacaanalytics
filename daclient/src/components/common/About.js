@@ -26,7 +26,7 @@ function About()
                     </p>
                     <p>
                         There are three categories explored in these visualizations: population by age group, sex, and marital status.
-                        In the given line and bar charts, we can explore how the population has changed over time for each given group as well how each option compares to the rest.
+                        In the given line charts, we can explore how the population has changed over time for each given group as well how each option compares to the rest.
                     </p>
                     <p>
                         The other two categories explored are population by birth country and by state of residence.

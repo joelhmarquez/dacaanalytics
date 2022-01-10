@@ -3,20 +3,15 @@ import LineGraph from '../common/LineGraph'
 import * as Constants from '../common/utils/Constants';
 import * as DataProvider from '../common/utils/DataProvider';
 import * as Utils from '../common/utils/Utils'
-import BarGraph from '../common/BarGraph';
 
 function GetContent()
 {
     let data = DataProvider.GetPopulationBySexByYearData();
     let lines = Utils.GetLinesFromData(data, Utils.WithUppercaseFirstLetter)
-    let bars = Utils.GetBarsFromData(data, Utils.WithUppercaseFirstLetter)
     return(
         <div className="row">
-            <div className="col-lg-6">
-                <LineGraph aspect={Constants.DOUBLE_GRAPH_ASPECT} data={data} lines={lines}/>
-            </div>
-            <div className="col-lg-6">
-                <BarGraph aspect={Constants.DOUBLE_GRAPH_ASPECT} data={data} bars={bars}/>
+            <div className="col-lg-12">
+                <LineGraph aspect={Constants.SINGLE_GRAPH_ASPECT} data={data} lines={lines}/>
             </div>
         </div>);
 }
